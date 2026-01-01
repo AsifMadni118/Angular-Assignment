@@ -242,9 +242,7 @@ This will create an optimized production build in the `dist/` folder.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
 
-This project is created for educational purposes as part of a MEAN Stack Intern Assignment.
 
 ## Author
 

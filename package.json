@@ -4,7 +4,7 @@
   "description": "Angular 7/8 Single Page Application for managing a list of people",
   "scripts": {
     "ng": "ng",
-    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng serve",
+    "start": "ng serve",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng build",
     "build:prod": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng build --prod",
     "test": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng test",
