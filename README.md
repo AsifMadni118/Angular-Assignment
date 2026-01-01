@@ -112,11 +112,4 @@ src/app/
 
 ---
 
-## Notes
-
-This project is created for learning and evaluation purposes
-
-Focus is on Angular fundamentals and CRUD operations
-
-UI and logic are kept simple and clear
 
