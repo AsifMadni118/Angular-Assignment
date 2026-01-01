@@ -1,0 +1,72 @@
+<div class="card">
+  <h2>People List</h2>
+
+  <div style="margin-bottom: 1.5rem;">
+    <button class="btn btn-primary" (click)="createPerson()">
+      <i class="material-icons" style="vertical-align: middle; margin-right: 0.5rem;">add</i>
+      Add New Person
+    </button>
+    <button class="btn btn-secondary" (click)="loadPeople()" [disabled]="loading">
+      <i class="material-icons" style="vertical-align: middle; margin-right: 0.5rem;">refresh</i>
+      Refresh
+    </button>
+  </div>
+
+  <div *ngIf="error" class="error">
+    <strong>Error:</strong> {{ error }}
+  </div>
+
+  <div *ngIf="deleteSuccess" class="success">
+    <strong>Success:</strong> {{ deleteSuccess }}
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <p>Loading people...</p>
+  </div>
+
+  <div *ngIf="!loading && people.length === 0 && !error" class="empty-state">
+    <h3>No people found</h3>
+    <p>Click "Add New Person" to create your first person.</p>
+  </div>
+
+  <table *ngIf="!loading && people.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>City</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of people">
+        <td>{{ person.id }}</td>
+        <td>{{ person.name }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.phone || 'N/A' }}</td>
+        <td>{{ person.address?.city || 'N/A' }}</td>
+        <td>
+          <div class="action-buttons">
+            <button class="btn btn-primary" (click)="editPerson(person.id)" title="Edit">
+              <i class="material-icons" style="font-size: 18px;">edit</i>
+            </button>
+            <button class="btn btn-danger" (click)="openDeleteModal(person.id, person.name)" title="Delete">
+              <i class="material-icons" style="font-size: 18px;">delete</i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<app-delete-confirmation-modal
+  [isVisible]="showDeleteModal"
+  [personName]="personToDelete?.name || ''"
+  (confirmDelete)="confirmDelete()"
+  (cancelDelete)="closeDeleteModal()">
+</app-delete-confirmation-modal>
+

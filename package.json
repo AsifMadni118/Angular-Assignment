@@ -1,0 +1,39 @@
+{
+  "name": "people-management-app",
+  "version": "1.0.0",
+  "description": "Angular 7/8 Single Page Application for managing a list of people",
+  "scripts": {
+    "ng": "ng",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng serve",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng build",
+    "build:prod": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng build --prod",
+    "test": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^8.2.14",
+    "@angular/common": "^8.2.14",
+    "@angular/compiler": "^8.2.14",
+    "@angular/core": "^8.2.14",
+    "@angular/forms": "^8.2.14",
+    "@angular/platform-browser": "^8.2.14",
+    "@angular/platform-browser-dynamic": "^8.2.14",
+    "@angular/router": "^8.2.14",
+    "core-js": "^2.6.11",
+    "rxjs": "^6.5.5",
+    "tslib": "^1.10.0",
+    "zone.js": "^0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.803.29",
+    "@angular/cli": "^8.3.29",
+    "@angular/compiler-cli": "^8.2.14",
+    "@angular/language-service": "^8.2.14",
+    "@types/node": "^12.12.62",
+    "cross-env": "^7.0.3",
+    "typescript": "~3.5.3"
+  }
+}
+

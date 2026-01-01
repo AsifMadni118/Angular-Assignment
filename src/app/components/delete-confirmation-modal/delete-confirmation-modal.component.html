@@ -1,0 +1,25 @@
+<div class="modal-backdrop" *ngIf="isVisible" (click)="onBackdropClick($event)">
+  <div class="modal-container" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>
+        <i class="material-icons" style="color: #f44336; vertical-align: middle; margin-right: 0.5rem;">warning</i>
+        Confirm Delete
+      </h3>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure you want to delete <strong>{{ personName }}</strong>?</p>
+      <p class="warning-text">This action cannot be undone.</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" (click)="onCancel()">
+        <i class="material-icons" style="vertical-align: middle; margin-right: 0.5rem;">close</i>
+        Cancel
+      </button>
+      <button class="btn btn-danger" (click)="onConfirm()">
+        <i class="material-icons" style="vertical-align: middle; margin-right: 0.5rem;">delete</i>
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+
